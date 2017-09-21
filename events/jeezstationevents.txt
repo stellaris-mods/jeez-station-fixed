@@ -1,0 +1,31 @@
+namespace = jeezstations
+
+event = {
+	id = jeezstations.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			every_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_class = shipclass_military_station
+						is_ship_class = shipclass_orbital_station
+						is_ship_class = shipclass_mining_station
+						is_ship_class = shipclass_research_station
+						is_ship_class = shipclass_wormhole_station
+						is_ship_class = shipclass_observation_station
+						is_ship_class = shipclass_outpost_station
+					}
+					NOT = { has_fleet_flag = jeezbuffedalready }
+				}
+				add_modifier = {
+					modifier = jeez_stations_buff
+					days = -1
+				}
+				set_fleet_flag = jeezbuffedalready
+			}
+		}
+	}
+}

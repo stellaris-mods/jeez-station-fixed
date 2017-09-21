@@ -1,0 +1,3 @@
+jeez_stations_buff = {
+	ship_hitpoints_mult = 3
+}
